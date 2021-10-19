@@ -4,8 +4,31 @@ from typing import Optional
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 from time import sleep
 
+def menu():
+    print("-------------MENU---------------")
+    print("1 - Cadastrar usuario")
+    print("2 - Exibir usuarios (Cadastro)")
+    print("3 - Exibir usuarios (Alfabetica)")
+    print("4 - Verificar usuario")
+    print("5 - Remover cadastro")
+    print("6 - Renomear usuario")
+    print("7 - Sair")
+
 def main():
-    print("Teste")
+    listaDeUsuarios = {}
+    opçao = 1
+
+    while True:
+        menu()
+        opçao = int(input("-------Escolha uma opção--------\n"))
+        clearConsole()
+        if opçao == 1: print("teste")
+        elif opçao == 2: print("teste")
+        elif opçao == 3: print("teste")
+        elif opçao == 4: print("teste")
+        elif opçao == 5: print("teste")
+        elif opçao == 6: print("teste")
+        elif opçao == 7: return
 
 
 if __name__ == "__main__":
