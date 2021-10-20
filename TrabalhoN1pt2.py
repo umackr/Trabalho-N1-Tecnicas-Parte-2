@@ -74,6 +74,23 @@ def removerUsuario(listaDeUsuarios):
         sleep(2)
         clearConsole()
 
+def renomearUsuario(listaDeUsuarios):
+    email = str(input("Insira e-mail do usuario\n"))
+    clearConsole()
+    listaAux = {}
+    
+    for usuario in listaDeUsuarios:
+        if listaDeUsuarios[usuario] == email:
+            nomeNovo = str(input("Insira o novo nome\n")).lower()
+            listaAux[nomeNovo] = email
+            clearConsole()
+            print("Nome trocado de", usuario,"Para ",nomeNovo)
+            sleep(3)
+
+        else: listaAux[usuario] = listaDeUsuarios[usuario]
+    clearConsole()
+    return listaAux
+
 def menu():
     print("-------------MENU---------------")
     print("1 - Cadastrar usuario")
@@ -97,11 +114,8 @@ def main():
         elif opçao == 3: exibirPorNome(listaDeUsuarios)
         elif opçao == 4: verificarUsuario(listaDeUsuarios)
         elif opçao == 5: removerUsuario(listaDeUsuarios)
-        elif opçao == 6: print("teste")
+        elif opçao == 6: listaDeUsuarios = renomearUsuario(listaDeUsuarios)
         elif opçao == 7: return
-
-
-
 
 if __name__ == "__main__":
     main()
