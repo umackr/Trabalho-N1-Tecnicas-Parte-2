@@ -22,6 +22,27 @@ def exibirUsuarios(listaDeUsuarios):
     input("\nPressione ENTER para continuar")
     clearConsole()
 
+def exibirPorNome(listaDeUsuarios):
+    print("Usuarios cadastrados (Ordem Alfabetica):\n")
+    for usuarios in sorted(listaDeUsuarios):
+        print("NOME:",usuarios,"\tE-MAIL:",listaDeUsuarios[usuarios])
+    input("\nPressione ENTER para continuar")
+    clearConsole()
+
+def verificarUsuario(listaDeUsuarios):
+    nome = str(input("Qual usuario você gostaria de verificar?\n"))
+    clearConsole()
+    if nome in listaDeUsuarios:
+        print(nome, "se encontra na lista de usuarios.\n")
+        print("NOME:",nome,"\tE-MAIL:",listaDeUsuarios[nome])
+        input("\nPressione ENTER para continuar")
+        clearConsole()
+        return
+    else:
+        print(nome, "não se encontra na lista de usuarios")
+        input("\nPressione ENTER para continuar")
+    clearConsole()
+
 def menu():
     print("-------------MENU---------------")
     print("1 - Cadastrar usuario")
@@ -42,8 +63,8 @@ def main():
         clearConsole()
         if opçao == 1: cadastrarUsuario(listaDeUsuarios)
         elif opçao == 2: exibirUsuarios(listaDeUsuarios)
-        elif opçao == 3: print("teste")
-        elif opçao == 4: print("teste")
+        elif opçao == 3: exibirPorNome(listaDeUsuarios)
+        elif opçao == 4: verificarUsuario(listaDeUsuarios)
         elif opçao == 5: print("teste")
         elif opçao == 6: print("teste")
         elif opçao == 7: return
